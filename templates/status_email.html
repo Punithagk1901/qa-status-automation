@@ -9,103 +9,151 @@
     body {
       margin: 0;
       padding: 0;
-      background-color: #f3f6fb;
+      background-color: #eef3fa;
       font-family: Arial, Helvetica, sans-serif;
-      color: #1f2937;
+      color: #0f172a;
     }
-    .container {
+    .main-table {
       width: 100%;
-      max-width: 1100px;
+      border-collapse: collapse;
+    }
+    .wrapper {
+      width: 100%;
+      max-width: 1140px;
       margin: 0 auto;
       background-color: #ffffff;
+      border: 1px solid #d9e2ef;
     }
-    .header {
+    .header-bar {
       background-color: #0b5ed7;
       color: #ffffff;
-      padding: 18px 24px;
-      font-size: 26px;
+      font-size: 28px;
       font-weight: 700;
-      text-align: left;
+      padding: 20px 24px;
+    }
+    .meta-row {
+      font-size: 12px;
+      color: #475569;
+      padding: 10px 24px 14px 24px;
+      border-bottom: 1px solid #e2e8f0;
     }
     .section-title {
-      font-size: 18px;
+      background-color: #f8fbff;
+      color: #1e3a8a;
+      font-size: 17px;
       font-weight: 700;
-      color: #0f172a;
-      padding: 20px 24px 10px 24px;
+      border-left: 4px solid #0b5ed7;
+      padding: 10px 12px;
     }
-    .meta {
-      font-size: 12px;
-      color: #64748b;
-      padding: 0 24px 16px 24px;
+    .section-pad {
+      padding: 14px 24px 8px 24px;
     }
-    .metric-grid {
-      width: calc(100% - 48px);
-      margin: 0 24px 12px 24px;
+    .kpi-table {
+      width: 100%;
       border-collapse: separate;
       border-spacing: 10px;
       table-layout: fixed;
     }
-    .metric-card {
-      background-color: #f8fafc;
-      border: 1px solid #e2e8f0;
-      border-radius: 8px;
-      text-align: center;
-      padding: 12px 8px;
+    .kpi-card {
       width: 16.66%;
+      background-color: #f8fafc;
+      border: 1px solid #dbe4f0;
+      text-align: center;
+      padding: 10px 8px;
     }
-    .metric-label {
-      font-size: 12px;
+    .kpi-label {
+      font-size: 11px;
       color: #475569;
-      margin-bottom: 6px;
       text-transform: uppercase;
-      letter-spacing: 0.3px;
+      letter-spacing: 0.2px;
     }
-    .metric-value {
+    .kpi-value {
+      display: block;
+      margin-top: 6px;
       font-size: 24px;
       font-weight: 700;
       color: #0f172a;
     }
-    .passed {
+    .value-passed {
       color: #1e7e34;
     }
-    .failed {
+    .value-failed {
       color: #b91c1c;
     }
-    .blocked {
+    .value-blocked {
       color: #c2410c;
     }
-    .percent-table {
-      width: calc(100% - 48px);
-      margin: 0 24px 8px 24px;
+    .health-table {
+      width: 100%;
       border-collapse: collapse;
+      margin-top: 6px;
+      margin-bottom: 6px;
     }
-    .percent-table td {
+    .health-label {
+      width: 220px;
+      padding: 10px 12px;
+      border: 1px solid #dbe4f0;
+      background-color: #f8fafc;
+      font-size: 13px;
+      font-weight: 700;
+    }
+    .health-value {
+      padding: 10px 12px;
+      border: 1px solid #dbe4f0;
+      font-size: 14px;
+      font-weight: 700;
+    }
+    .health-green {
+      background-color: #dcfce7;
+      color: #14532d;
+    }
+    .health-amber {
+      background-color: #fef3c7;
+      color: #92400e;
+    }
+    .health-red {
+      background-color: #fee2e2;
+      color: #991b1b;
+    }
+    .summary-list {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 8px;
+      margin-bottom: 4px;
+    }
+    .summary-list td {
+      border: 1px solid #e2e8f0;
+      padding: 8px 10px;
+      font-size: 13px;
+      background-color: #ffffff;
+    }
+    .rate-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 12px;
+    }
+    .rate-table td {
       border: 1px solid #dbe4f0;
       padding: 10px 12px;
       font-size: 14px;
     }
-    .percent-name {
+    .rate-label {
       background-color: #f8fafc;
       font-weight: 600;
-      width: 35%;
+      width: 40%;
     }
-    .percent-value {
+    .rate-value {
       font-weight: 700;
       text-align: right;
-      width: 65%;
+      width: 60%;
     }
-    .table-wrap {
-      width: calc(100% - 48px);
-      margin: 0 24px 24px 24px;
-      overflow-x: auto;
-    }
-    .detail-table {
+    .data-table {
       width: 100%;
-      min-width: 760px;
       border-collapse: collapse;
       border: 1px solid #dbe4f0;
+      margin-bottom: 14px;
     }
-    .detail-table th {
+    .data-table th {
       background-color: #eff6ff;
       color: #1e3a8a;
       text-align: left;
@@ -113,7 +161,7 @@
       padding: 10px;
       border-bottom: 1px solid #dbe4f0;
     }
-    .detail-table td {
+    .data-table td {
       font-size: 13px;
       padding: 10px;
       border-top: 1px solid #eef2f7;
@@ -121,77 +169,103 @@
     }
     .status-chip {
       display: inline-block;
-      border-radius: 12px;
-      padding: 2px 10px;
+      border: 1px solid #cbd5e1;
+      border-radius: 10px;
+      padding: 2px 8px;
       font-weight: 700;
       font-size: 12px;
       color: #1f2937;
       background-color: #e2e8f0;
     }
-    .footer {
+    .footer-row {
+      border-top: 1px solid #dbe4f0;
       font-size: 11px;
       color: #64748b;
-      border-top: 1px solid #e2e8f0;
       padding: 12px 24px 18px 24px;
     }
     @media only screen and (max-width: 760px) {
-      .header {
+      .header-bar {
         font-size: 22px;
       }
-      .metric-card {
+      .kpi-card {
         width: 50%;
         display: inline-block;
       }
-      .metric-value {
+      .kpi-value {
         font-size: 20px;
       }
     }
   </style>
 </head>
 <body>
-  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
+  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" class="main-table">
     <tr>
-      <td align="center" style="padding: 18px;">
-        <table role="presentation" class="container" cellpadding="0" cellspacing="0" border="0">
+      <td align="center" style="padding: 16px;">
+        <table role="presentation" class="wrapper" cellpadding="0" cellspacing="0" border="0">
           <tr>
-            <td class="header">QA Daily Status Report</td>
+            <td class="header-bar">QA Daily Status Report</td>
+          </tr>
+          <tr>
+            <td class="meta-row">Generated: {{ generated_at }}</td>
           </tr>
 
           <tr>
-            <td class="meta">Generated: {{ generated_at }}</td>
-          </tr>
-
-          <tr>
-            <td class="section-title">Summary Metrics</td>
-          </tr>
-
-          <tr>
-            <td>
-              <table role="presentation" class="metric-grid">
+            <td class="section-pad">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
                 <tr>
-                  <td class="metric-card">
-                    <div class="metric-label">Total Tests</div>
-                    <div class="metric-value">{{ totals["Total Tests"] }}</div>
+                  <td class="section-title">Executive Summary</td>
+                </tr>
+              </table>
+              <table role="presentation" class="health-table">
+                <tr>
+                  <td class="health-label">Overall Health Status</td>
+                  <td class="health-value {{ health_status['tone_class'] }}">
+                    {{ health_status['label'] }} - {{ health_status['description'] }}
                   </td>
-                  <td class="metric-card">
-                    <div class="metric-label">Executed</div>
-                    <div class="metric-value">{{ derived["Executed"] }}</div>
+                </tr>
+              </table>
+              <table role="presentation" class="summary-list">
+                {% for insight in executive_summary %}
+                <tr>
+                  <td>{{ loop.index }}. {{ insight }}</td>
+                </tr>
+                {% endfor %}
+              </table>
+            </td>
+          </tr>
+
+          <tr>
+            <td class="section-pad">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
+                <tr>
+                  <td class="section-title">Professional KPI Cards</td>
+                </tr>
+              </table>
+              <table role="presentation" class="kpi-table">
+                <tr>
+                  <td class="kpi-card">
+                    <span class="kpi-label">Total Tests</span>
+                    <span class="kpi-value">{{ totals["Total Tests"] }}</span>
                   </td>
-                  <td class="metric-card">
-                    <div class="metric-label">Passed</div>
-                    <div class="metric-value passed">{{ totals["Passed"] }}</div>
+                  <td class="kpi-card">
+                    <span class="kpi-label">Executed</span>
+                    <span class="kpi-value">{{ derived["Executed"] }}</span>
                   </td>
-                  <td class="metric-card">
-                    <div class="metric-label">Failed</div>
-                    <div class="metric-value failed">{{ totals["Failed"] }}</div>
+                  <td class="kpi-card">
+                    <span class="kpi-label">Passed</span>
+                    <span class="kpi-value value-passed">{{ totals["Passed"] }}</span>
                   </td>
-                  <td class="metric-card">
-                    <div class="metric-label">Blocked</div>
-                    <div class="metric-value blocked">{{ totals["Blocked"] }}</div>
+                  <td class="kpi-card">
+                    <span class="kpi-label">Failed</span>
+                    <span class="kpi-value value-failed">{{ totals["Failed"] }}</span>
                   </td>
-                  <td class="metric-card">
-                    <div class="metric-label">Not Executed</div>
-                    <div class="metric-value">{{ totals["Not Executed"] }}</div>
+                  <td class="kpi-card">
+                    <span class="kpi-label">Blocked</span>
+                    <span class="kpi-value value-blocked">{{ totals["Blocked"] }}</span>
+                  </td>
+                  <td class="kpi-card">
+                    <span class="kpi-label">Not Executed</span>
+                    <span class="kpi-value">{{ totals["Not Executed"] }}</span>
                   </td>
                 </tr>
               </table>
@@ -199,30 +273,133 @@
           </tr>
 
           <tr>
-            <td class="section-title">Percentages</td>
-          </tr>
-          <tr>
-            <td>
-              <table role="presentation" class="percent-table">
+            <td class="section-pad">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
                 <tr>
-                  <td class="percent-name">Execution %</td>
-                  <td class="percent-value">{{ "%.2f"|format(derived["Execution Percentage"]) }}%</td>
+                  <td class="section-title">Percentages</td>
+                </tr>
+              </table>
+              <table role="presentation" class="rate-table">
+                <tr>
+                  <td class="rate-label">Execution %</td>
+                  <td class="rate-value">{{ "%.2f"|format(derived["Execution Percentage"]) }}%</td>
                 </tr>
                 <tr>
-                  <td class="percent-name">Pass %</td>
-                  <td class="percent-value">{{ "%.2f"|format(derived["Pass Percentage"]) }}%</td>
+                  <td class="rate-label">Pass %</td>
+                  <td class="rate-value value-passed">{{ "%.2f"|format(derived["Pass Percentage"]) }}%</td>
+                </tr>
+                <tr>
+                  <td class="rate-label">Failure Rate %</td>
+                  <td class="rate-value value-failed">{{ "%.2f"|format(derived["Failure Percentage"]) }}%</td>
+                </tr>
+                <tr>
+                  <td class="rate-label">Blocked Rate %</td>
+                  <td class="rate-value value-blocked">{{ "%.2f"|format(derived["Blocked Percentage"]) }}%</td>
                 </tr>
               </table>
             </td>
           </tr>
 
           <tr>
-            <td class="section-title">Detailed Table</td>
+            <td class="section-pad">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
+                <tr>
+                  <td class="section-title">Platform-wise Breakdown</td>
+                </tr>
+              </table>
+              <table role="presentation" class="data-table">
+                <thead>
+                  <tr>
+                    <th>Platform</th>
+                    <th>Total</th>
+                    <th>Executed</th>
+                    <th>Passed</th>
+                    <th>Failed</th>
+                    <th>Blocked</th>
+                    <th>Not Executed</th>
+                    <th>Pass %</th>
+                    <th>Failure %</th>
+                    <th>Blocked %</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {% if platform_breakdown %}
+                    {% for row in platform_breakdown %}
+                    <tr>
+                      <td>{{ row["Platform"] }}</td>
+                      <td>{{ row["Total"] }}</td>
+                      <td>{{ row["Executed"] }}</td>
+                      <td class="value-passed">{{ row["Passed"] }}</td>
+                      <td class="value-failed">{{ row["Failed"] }}</td>
+                      <td class="value-blocked">{{ row["Blocked"] }}</td>
+                      <td>{{ row["Not Executed"] }}</td>
+                      <td>{{ "%.2f"|format(row["Pass %"]) }}%</td>
+                      <td>{{ "%.2f"|format(row["Failure %"]) }}%</td>
+                      <td>{{ "%.2f"|format(row["Blocked %"]) }}%</td>
+                    </tr>
+                    {% endfor %}
+                  {% else %}
+                    <tr>
+                      <td colspan="10">No platform data available.</td>
+                    </tr>
+                  {% endif %}
+                </tbody>
+              </table>
+            </td>
           </tr>
+
           <tr>
-            <td>
-              <div class="table-wrap">
-                <table role="presentation" class="detail-table">
+            <td class="section-pad">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
+                <tr>
+                  <td class="section-title">Release Information</td>
+                </tr>
+              </table>
+              <table role="presentation" class="data-table">
+                <thead>
+                  <tr>
+                    <th>Release</th>
+                    <th>UAT Date</th>
+                    <th>PROD Date</th>
+                    <th>Total</th>
+                    <th>Executed</th>
+                    <th>Pass %</th>
+                    <th>Failure %</th>
+                    <th>Blocked %</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {% if release_summary %}
+                    {% for row in release_summary %}
+                    <tr>
+                      <td>{{ row["Release"] }}</td>
+                      <td>{{ row["UAT Date"] }}</td>
+                      <td>{{ row["PROD Date"] }}</td>
+                      <td>{{ row["Total"] }}</td>
+                      <td>{{ row["Executed"] }}</td>
+                      <td>{{ "%.2f"|format(row["Pass %"]) }}%</td>
+                      <td>{{ "%.2f"|format(row["Failure %"]) }}%</td>
+                      <td>{{ "%.2f"|format(row["Blocked %"]) }}%</td>
+                    </tr>
+                    {% endfor %}
+                  {% else %}
+                    <tr>
+                      <td colspan="8">No release data available.</td>
+                    </tr>
+                  {% endif %}
+                </tbody>
+              </table>
+            </td>
+          </tr>
+
+          <tr>
+            <td class="section-pad">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
+                <tr>
+                  <td class="section-title">Detailed Table</td>
+                </tr>
+              </table>
+              <table role="presentation" class="data-table">
                   <thead>
                     <tr>
                       <th>Date</th>
@@ -239,19 +416,18 @@
                       <td>{{ row["Date"] }}</td>
                       <td>{{ row["Platform"] }}</td>
                       <td>{{ row["Task"] }}</td>
-                      <td><span class="status-chip">{{ row["Status"] }}</span></td>
+                      <td><span class="status-chip">{{ row["Status"] or "N/A" }}</span></td>
                       <td>{{ row["Owner"] }}</td>
                       <td>{{ row["Remarks"] }}</td>
                     </tr>
                     {% endfor %}
                   </tbody>
                 </table>
-              </div>
             </td>
           </tr>
 
           <tr>
-            <td class="footer">
+            <td class="footer-row">
               Local preview generated from Excel-only QA data.
             </td>
           </tr>

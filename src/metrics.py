@@ -30,6 +30,8 @@ def calculate_metrics(dataframe: pd.DataFrame) -> Dict[str, Dict[str, float]]:
     executed = passed + failed + blocked
     execution_percentage = _safe_percentage(executed, total_tests)
     pass_percentage = _safe_percentage(passed, executed)
+    failure_percentage = _safe_percentage(failed, executed)
+    blocked_percentage = _safe_percentage(blocked, executed)
 
     return {
         "totals": {
@@ -43,5 +45,7 @@ def calculate_metrics(dataframe: pd.DataFrame) -> Dict[str, Dict[str, float]]:
             "Executed": executed,
             "Execution Percentage": execution_percentage,
             "Pass Percentage": pass_percentage,
+            "Failure Percentage": failure_percentage,
+            "Blocked Percentage": blocked_percentage,
         },
     }
